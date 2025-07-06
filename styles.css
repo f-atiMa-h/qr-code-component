@@ -1,0 +1,112 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --slate-300: hsl(212, 45%, 89%);
+    --slate-500: hsl(216, 15%, 48%);
+    --slate-900: hsl(218, 44%, 22%);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+   
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--slate-300);
+    
+    padding: 2rem;
+}
+
+.background-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 375px;
+    
+    padding: 40px;
+}
+
+.qr-code-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.qr-code-background {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    background: linear-gradient(45deg, var(--slate-300), var(--white));
+    border-radius: 16px;
+    z-index: -1;
+    transform: rotate(3deg);
+    box-shadow: var(--shadow);
+}
+
+.qr-code-card {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(to bottom right, var(--slate-300), var(--white));
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.qr-code-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.qr-image {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.qr-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.qr-code-card:hover .qr-image img {
+    transform: scale(1.05);
+}
+
+.qr-info {
+    padding: 20px;
+}
+
+.info-1 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--slate-900);
+    margin-bottom: 10px;
+}
+.info-2 {
+        font-size: 15px;
+        color: var(--slate-500);
+    }
+.attribution {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.875rem;
+        color: var(--slate-500);
+    }
